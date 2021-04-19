@@ -1,0 +1,29 @@
+Photon handles the multiplayer. Here's how to test it:
+
+1- In the build settings make sure the "Multiplayer" scene's index is after the "Menu" index (e.g. if "Menu" scene is index 1 then make "multiplayer" scene index 2).
+
+2- Open the "Menu" scene -> select "MultiplayerSettings" game object -> under the "MultiplayerSettings" script component change scene numbers based on your build settings.
+
+3- Now try to play the "Menu" scene. Each number represents a different character, after picking a character press "Battle" and it should take you to the "Multiplayer" scene where it will instantiate the player character and allow you to play using WASD to move and the mouse to move camera.
+
+
+
+
+If it's not working then try the following:
+
+1- Previously when I tried testing it in the project that contains the MMORPG kit I got an error that the file "websocket-sharp" exists in both Photon and the kit. I'm suspecting it's becausse of a clashing between the two multiplayer network systems. What solved the problem for me was deleting the "websocket-sharp.dll" file from the Photon directory (Assets -> Photon -> PhotonLibss -> WebSocket)
+
+2- In Unity open "window" -> Photon Unity Networking -> Highlight Server Settings, or you can just navigate to the file yourself by going to the assets folder -> Photon -> PhotonUnityNetworking -> Resources -> select "PhotonServerSettings" -> in the inspector under "Server/Cloud Settingss" make sure the App Id PUN is "1403c38f-504a-4a78-836c-9bb925c362a6"
+
+
+
+
+
+
+Firebase handles the database. Here's how to test it:
+
+1- First you need to import the firebase packages to your project. Watch this https://www.youtube.com/watch?v=GjyQiq23fBk&t=178s which links to the section of the video where it explains how.
+
+2- Go to build settings -> Player Settings -> Other Settings -> Under Identification make sure the Package name is com.Hezmedia.UniVRse
+3- Try to play the "Login" Scene. try typing testing@gmail.com and 123456 for password and see if it logs in. you can test the registration too.
+
